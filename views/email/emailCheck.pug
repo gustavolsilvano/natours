@@ -1,0 +1,19 @@
+extends baseEmail
+
+block content
+    p Hi #{firstName},
+    p Welcome to Natours, we're glad to have you 🎉🙏
+    p We're all a big familiy here, so make yourself home! 
+    p Please use the 6 digit code below to activate your account when loggin for the first time. 
+    p Remeber that you have 10 min to complete this task.
+    table.btn.btn-primary(role='presentation', border='0', cellpadding='0', cellspacing='0')
+        tbody
+            tr
+                td(align='left')
+                    table(role='presentation', border='0', cellpadding='0', cellspacing='0')
+                        tbody
+                            tr
+                                td
+                                    a(target='_blank') #{url}
+    p If you need any help with booking your next tour, please don't hesitate to contact me!
+    p - Gustavo Silvano, CEO
