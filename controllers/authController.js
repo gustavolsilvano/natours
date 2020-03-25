@@ -205,8 +205,8 @@ exports.protect = catchAsync(async (req, res, next) => {
   // 2) Verification token
   // Verify if someone has alterated the database
   const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
-  console.log({process.env.JWT_SECRET})
-  console.log({decoded})
+  console.log(process.env.JWT_SECRET);
+  console.log({ decoded });
 
   // decode => id (payload), iat (created at), exp (expire at)
 
