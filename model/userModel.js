@@ -180,7 +180,6 @@ userSchema.methods.createCheckEmailToken = async function() {
     .digest('hex');
 
   this.checkEmailExpire = Date.now() + 10 * 60 * 1000;
-  // console.log({ checkEmailToken }, this.checkEmailToken);
 
   await this.save({ validateBeforeSave: false });
   return checkEmailToken;

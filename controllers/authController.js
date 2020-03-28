@@ -150,7 +150,7 @@ exports.login = catchAsync(async (req, res, next) => {
 
   // Verifica se email de autenticação já expirou
   if (!user.emailVerified === true && user.checkEmailExpire < Date.now()) {
-    const emailToken = await user.createTempPassword();
+    const emailToken = await user.createCheckEmailToken();
     // Email to verify the account
     try {
       await new Email(user, emailToken).sendEmailCheck();
